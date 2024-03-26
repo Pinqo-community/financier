@@ -1,0 +1,16 @@
+App\Domain\Expense\Expense:
+    type: entity
+    repositoryClass: App\Infrastructure\Expense\Repository\ExpenseRepository
+    table: expense
+    id:
+        id:
+            type: uuid
+            unique: true
+    fields:
+        title:
+            type: string
+    amount:
+        type: float
+    madeAt:
+        type: datetime_immutable
+
