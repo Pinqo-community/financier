@@ -7,11 +7,11 @@ use App\Domain\Expense\Repository\ExpenseRepositoryInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
-class ExpenseRepository extends ServiceEntityRepository implements ExpenseRepositoryInterface
+class DoctrineExpenseRepository extends ServiceEntityRepository implements ExpenseRepositoryInterface
 {
 	public function __construct(ManagerRegistry $registry)
 	{
-		parent::__construct($registry);
+		parent::__construct($registry, Expense::class);
 	}
 
 	public function save(Expense $expense): void
