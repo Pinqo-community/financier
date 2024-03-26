@@ -1,0 +1,12 @@
+framework:
+    messenger:
+        default_bus: messenger.bus.command
+
+        buses:
+            messenger.bus.command:
+                default_middleware: false
+                middleware:
+                    - handle_message
+
+        transports:
+            domain_events: "%env(MESSENGER_TRANSPORT_DSN)%"
