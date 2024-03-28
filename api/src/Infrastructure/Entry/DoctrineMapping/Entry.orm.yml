@@ -1,0 +1,15 @@
+App\Domain\Entry\Entry:
+    type: entity
+    repositoryClass: App\Infrastructure\Entry\Repository\EntryRepository
+    table: entry
+    id:
+        id:
+            type: uuid
+            unique: true
+    fields:
+        title:
+            type: string
+        amount:
+            type: float
+        madeAt:
+            type: datetime_immutable
